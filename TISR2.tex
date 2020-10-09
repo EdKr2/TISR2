@@ -1,0 +1,788 @@
+\documentclass[12pt,abstract]{scrartcl}
+\usepackage[utf8]{inputenc}
+
+\title{Theory of Inhomogeneous Short Range Order and Calphad Modeling. }
+\author{Edward Kremer \\ \\ \textit{email: edk137@gmail.com}}
+
+
+\subtitle{Part 2. Quasichemical Theory}
+
+\date{September 2018 \\ v. 2, February  2020}
+
+
+%%\usepackage{natbib}
+\usepackage[sort&compress,numbers]{natbib}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{siunitx} % Required for alignment
+\sisetup{
+  round-mode          = places, % Rounds numbers
+  round-precision     = 3, % to 2 places
+}
+\hyphenation{ana-ly-sis}
+\hyphenation{trans-pa-rent}
+\hyphenation{ge-ne-ra-li-za-tion}
+\hyphenation{me-tal-lur-gi-cal}
+
+\graphicspath{ {images/} }
+%\bibliographystyle{plain}
+%\linespread{1.6}
+%\setlength{\parindent}{8em}
+%\setlength{\parskip}{1em}  %paragraph separation
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+The equations of the Quasichemical Theory are  deduced directly  from the equations of  the Theory of Inhomogeneous Short Range Order, establishing TISR  as the rigid generalization of the Quasichemical Theory.
+
+Methodological advantages of TISR are demonstrated.
+
+The Modified Quasichemical Model is critically discussed as another generalization of the  Quasichemical Theory.
+
+
+Multiple comparative examples are provided.
+
+\textbf{Keywords:} Modified Quasichemical Model; Computational Thermodynamic of alloys; Thermodynamic Activity; Thermodynamic Modeling; Association Solution Model.
+
+\end{abstract}
+
+\section{Introduction}
+Quasichemical Theory (QT) is a popular method in the Statistical Thermodynamics of alloys, which allows to take in the account the Short Range Order phenomenon \cite{hanslukas2007,Hillert2008}. 
+
+The detailed presentation of theory in its original form was given in the classical book of Guggenheim \cite{GUGGENHEIM1952}. Theory is based on the treatment the interatomic links between the neighboring atoms as independent entities that behave just as quasimolecules. As well as real molecules they are expected to be    in a thermodynamic equilibrium with each other:
+
+\begin{equation} \label{equilibrium}
+(a - a) + (b - b) \Leftrightarrow  2 (a - b)
+\end{equation} 
+
+(In the following text we will use interchangeably, without emphasizing, two distinct denotes for the atom types:  $a-b$ or $1-2$. It makes no difference in the current article though in the future texts the numeric form is more natural when considering multicomponent systems.) 
+
+Assuming, as the next step, that the quasimolecules can be rearranged just as real molecules, Guggenheim calculates the number of distinct  permutations of "molecules" 
+
+
+\begin{equation} \label{gugg}
+Q_1 = \frac{(\frac{1}{2} zN)!}{(n_{aa})! \,(n_{ab})!\,  (n_{ba})! \,(n_{bb})!}
+\end{equation} 
+where 
+\begin{equation} \label{n_summ}
+n_{aa} + n_{ab} + n_{ba} + n_{bb} = \frac{1}{2}z N
+\end{equation} 
+ and then uses the resulting expression to postulate the following formula for the combinatorial factor of the system:
+\begin{equation} \label{QCF}
+Q = \frac{N!}{N_a! N_b! } \left(\frac{Q_1}{Q_1^\infty}\right)
+\end{equation}
+where $Q_1^\infty$ is the limiting value of $Q_1$ at the high temperatures, when the atom distribution becomes chaotic.
+
+The above expression always causes at least two questions:
+
+-- When considering two links outgoing from the same atom    -- how is it possible to rearrange these links as independent entities?
+
+-- Why should we distinct $n_{ab} $ and $n_{ba}$ in the expression (\ref{gugg})? In the equilibrium equation (\ref{equilibrium}), when two "molecules" $a-a$  and $b-b$ from the left site are transformed into two "molecules" $a-b$ on the right site -- what will be produced:  $a-b$ or $b-a$? And what is the difference between two when considered as "molecules"?
+
+
+Answer to the first question is unknown; the \textit{prescription} is to apply normalization factor (as done in the equation (\ref{QCF})) what  will somehow fix the problem.
+
+Answer to the second question is purely pragmatic: if we exclude one of the $n_{ab}$ factors from the equation (\ref{gugg})   then  the location of maximum of the expression will be shifted away from the correct value, and the result will be not acceptable as a combinatorial factor.
+
+The purpose of this article is to show that  the Theory of Inhomogeneous Short Range Order (TISR)  \cite{TISR_p1} includes Quasichemical Theory just as a partial case. The approach provided by TISR has significant methodological advantages and resolves, in particular, the two above listed questions. 
+
+The Quasichemical Theory in its classical form has very restricted area of applicability \cite{Hillert2008}. Two generalization attempts will be considered and compared: the Modified Quasichemical Model \cite{Pelton1986,Pelton2007, Pelton_p1} and the Theory of Inhomogeneous Short Range Order  \cite{TISR_p1}.
+
+Another important generalization of Quasichemical Theory (the generalization that is used in superlattices thermodynamics) is the Cluster Site Approximation \cite{Yang1945,zhang_oates2001}, which deserves separate consideration and will be presented elsewhere. It  is also a partial case of TISR and consequently can use all the mathematical advantages of TISR' formalism.
+
+
+\section{Using TISR approach}
+
+The Quasichemical Theory corresponds to the selection of dimers as the basic structural element of formalism. According to the general ideology of TISR \cite{TISR_p1} the entire grid is presented as the ensemble of
+ cells --    dimers in this occasion. In the figure below this  is illustrated for the case of the plain square lattice.
+
+\begin{figure}[ht]
+\includegraphics[scale=0.7]{Dimer_grid.png}
+\centering 
+\caption{Splitting grid in cells-dimers}
+\label{fig:Splitting}
+\end{figure}
+
+As one can see, cells do not cross, and every atom is included in one of the cells -- precisely as required by TISR.
+
+The formalism described in  details in \cite{TISR_p1} can be applied to the current case without any modifications just by accepting the number $k$ of atoms in  a cell to be equal 2. In the following text some details may be omitted but can be immediately restored from the previous part  \cite{TISR_p1}. 
+
+We can see that the total number of cells is $ M = N / 2$, with  four distinct types of cells:
+
+\[
+M_{i=0, \alpha=1} \Leftrightarrow M_{b-b}; \quad M_{i=1, \alpha=1}\Leftrightarrow M_{a-b} ; \quad M_{i=1, \alpha=2}\Leftrightarrow M_{b-a} ; \quad M_{i=2, \alpha=1}\Leftrightarrow M_{a-a} 
+\]
+
+\begin{equation} \label{Ma-b}
+M_{aa} + M_{ab} + M_{ba} + M_{bb} = M = \frac{N}{2}
+\end{equation}
+
+It is clear that since cells have no common elements they can be freely rearranged. If we swap any cell of type $a-b$  with any cell of type $b-a$ then the new macroconfiguration will be evidently distinct from the original one. It explains why  it is necessary to distinct $a-b$ and $b-a$ cells.
+
+The cell' set used by TISR is in fact nothing but a (representative) subset of the full set  of interatomic links considered by the  standard QT. Comparing equation (\ref{Ma-b}) with equation (\ref{n_summ}) we immediately conclude that
+
+
+\begin{equation} \label{proportion}
+n_{ij} = z M_{ij}
+\end{equation}
+
+
+
+
+The suggested in  \cite{TISR_p1}  combinatorial  factor $K$ of the system  is
+
+\begin{equation} \label{config_final}
+K = K_0 * \left( \frac{K_1}{K_1^\infty} \right)^\gamma 
+\end{equation}
+
+where
+
+\begin{equation}\label{ideal}
+K_0 = \frac{N!}{N_1! N_2!}
+\end{equation}
+ $K_1$ is the number of distinguishable permutations of cells-dimers:
+
+\begin{equation} \label{K1}
+K_1 = \frac{M!}{\prod\limits_{i \alpha} ( M_{i \alpha})!} = \frac{(N/2)!}{(M_{aa})! \, (M_{ab})! \, (M_{ba})! \, (M_{bb})! }
+\end{equation}
+$K_1^\infty$ is $K_1$ taken at high temperatures when  interatomic interactions cannot influence the particle distribution and, as shown in  \cite{TISR_p1}
+\[K_1^\infty = K_0\]
+while $\gamma$ is the ratio of two numbers -- the full count of interatomic links in the system to the count of links belonging to the cell' set being considered:
+
+\begin{equation} \label{gamma=z}
+\gamma = (z N/2) / (1 * M) = z
+\end{equation}
+
+The heuristic derivation of the equation (\ref{config_final}) is critically important part of TISR and is in details described in \cite{TISR_p1}. This expression may look distinct from the  combinatorial  factor (\ref{QCF}) used by QT but we will show immediately that these expressions are identical.
+
+Indeed, using the Stirling's formula for factorial \cite{Arfken2013} and taking in the account the equality  (\ref{gamma=z}) it is easy  to check that
+
+\begin{equation}
+(K_1)^\gamma =  \frac {(zM)!}{\prod\limits_{i \alpha} ( zM_{i \alpha})!} = \frac{(zN/2)!}{(zM_{aa})! \, (zM_{ab})! \, (zM_{ba})! \, (zM_{bb})! } 
+\end{equation}
+
+Comparing the result with the expression (\ref{gugg}) for $Q_1$ and taking in the account (\ref{proportion}) we can see immediately that:
+
+\[
+K = Q
+\] 
+
+The expression for the energy  $E$ is defined in TISR as
+
+
+\begin{equation} \label{energy}
+E = \beta\sum_{i\alpha} U_{i \alpha} M_{i \alpha}
+\end{equation} 
+where $U_{i \alpha}$ is energy of cell-dimer of type $i, \alpha$ and \(\beta\) can be presented as ratio of two  numbers -- the full count of links in the system  ($ z N/2 $) and the count of the links located \textit{inside} cells: 
+\begin{equation}
+\beta = (z N/2) / (1 * M) = z 
+\end{equation}
+so the energy expression can be rewritten, according (\ref{proportion}), in the form known from QT:
+
+\begin{equation} \label{QT_energy}
+E = \sum_{ij} U_{ij} n_{ij}
+\end{equation} 
+
+Since energy and combinatorial factor taken from both theories are proved to be identical, we can be sure that the results of calculations will be identical too. 
+However, we would like  to show explicitly  that the parametric solution to the basic equations provided by TISR  can indeed be reduced to the standard QT form.
+
+
+Based on the above, the free energy of the system can be written as  \cite{TISR_p1}:
+\begin{equation} \label{free_energy}
+\begin{split}
+    F &= \beta\sum_{i\alpha} U_{i \alpha} M_{i \alpha} - \theta(1- \gamma) \ln K_0 - \theta \gamma \ln K_1\\ &+ \lambda_1 \left(N_1 - \sum_{i\alpha} i M_{i \alpha} 
+    \right) + \lambda_2 \left(N_2 - \sum_{i\alpha} (k-i) M_{i \alpha} 
+    \right)
+\end{split}
+\end{equation}
+where  $\theta $ is a temperature factor --  composition of absolute temperature and the Boltzmann constant $k_B$  \cite{Hill1956}; $\lambda_1$ and  $\lambda_2$ are the Lagrange multipliers  \cite{Arfken2013}.
+
+
+
+Minimization of (\ref{free_energy})  by $M_{i \alpha}$ (considered as independent variables) leads to the equilibrium equations 
+
+\begin{equation} \label{basic_equation}
+    \frac{\partial F}{\partial M_{i\alpha}} = \beta U_{i \alpha} + \theta \gamma \ln p_{i \alpha} - i \lambda_1 - (k-i) \lambda_2 = 0 
+\end{equation}
+where $ p_{i\alpha} =  M_{i\alpha} / M$.
+Solution of this equation can be immediately written as
+\begin{equation} \label{pia}
+    p_{i\alpha} = \exp \left(- {\frac{\beta U_{i \alpha}}{\theta\gamma }}\right) b_1^i b_2^{k-i}
+\end{equation}
+where $b_j$ are defined through
+\begin{equation}
+    \lambda_j = \theta \gamma \ln b_j, \quad j = 1, 2
+\end{equation}
+
+Precisely as in  \cite{TISR_p1} we introduce reduced variables $p_i$ to express the composition of alloy
+
+\begin{equation} \label{sum}
+    \sum_i p_i = b_2^k \sum_i W_i c_i = 1 
+\end{equation}
+\begin{equation} \label{sumx1}
+    \sum_i i p_i = b_2^k \sum_i i W_i c^i = k x_1 
+\end{equation}
+where the new notation $c$ 
+\begin{equation} \label{c=}
+    c := b_1 / b_2
+\end{equation}
+was introduced to be used as the independent variable in the parametric representation of composition and thermodynamic activities of components and 
+\begin{equation} \label{Wi}
+    W_i = \sum_\alpha \exp \left(- {\frac{\beta U_{i \alpha}}{\theta\gamma }}\right)
+\end{equation}
+
+For thermodynamic functions of mixing we have:
+
+\begin{equation} \label{W0-1}
+\begin{split}
+ U_{0\alpha} & =  U_{2 \alpha} = 0; \quad   U_{1 \alpha} = U_\Delta \\ W_0  &= W_2 = 1; \quad 
+W_1 = 2 \exp \left({- \frac{U_\Delta}{\theta}} \right) \rightleftharpoons  2 \eta
+\end{split}
+\end{equation}
+
+The equations (\ref{sum}) and  (\ref{sumx1}) yield immediately:
+
+\begin{equation}
+\frac{\sum_i i W_i c^i}{\sum_i (k - i) W_i c^i} = \frac{ x_1}{x_2}
+\end{equation}
+
+Taking in the account (\ref{W0-1}) we can reduce it to:
+
+\[
+\frac{\eta c + c^2}{1 + \eta c} = \frac{ x_1}{x_2}
+\]
+
+
+Solution of this quadratic equation together with formulas  (\ref{sum}) - (\ref{c=})  are resulted in the following expressions:
+
+\begin{equation} \label{cb}
+\begin{split}
+c &= \frac{2 x_1}{\eta (r + x_2 - x_1)}\\
+b_i^2 &= x_i \frac{r -1 + 2 x_i}{r + 1}, \quad i = 1, 2
+\end{split}
+\end{equation}
+where
+\[
+r^2 = (x_1 - x_2)^2 + \frac{4 x_1 x_2}{\eta^2}
+\]
+
+
+Substituting these expressions into the equation for the chemical potential taken from \cite{TISR_p1} and using the equation (\ref{gamma=z}) we come to the final result:
+
+\begin{equation}
+\mu_i =   \theta \ln x_j + \theta \gamma \ln \frac{b_j}{x_j} = \theta \ln x_i + \frac{\theta z}{2} \ln \frac{r - 1 + 2 x_i}{x_i (r+1)}
+\end{equation}
+
+To within notations this expression is precisely identical to the corresponding expression from \cite{GUGGENHEIM1952}.
+
+
+
+\section{Modified Quasichemical Model}
+
+Like  any other  Statistical-Thermodynamic model, Quasichemical Theory has some internal limitations which are important to consider when applying the theory to real systems.
+
+ QT is by its nature a high-temperature approximation that  becomes increasingly inaccurate when temperature decreases. It can be seen from the classical results (accumulated in \cite{GUGGENHEIM1952})  that
+ $1/\theta$ power series expansion of QT equations    matches  the first three  coefficients of Kirkwood' high temperature expansion, making it justified in the high temperature asymptotic limit. No such correspondence exists at the low temperatures. The physically meaningless negative values of entropy of mixing  at low temperatures \cite{Hillert2008} directly indicate that the equations are applied outside of their  range of applicability.
+
+It is shown in \cite{TISR_p4} how the combinatorial factor used by TISR can be modified to extend the area of  applicability of theory  over the entire physically meaning region.
+
+But the most significant limitation of QT is the pair-like structure of formalism, resulting in very important shortcomings:
+
+--  QT cannot distinct three-dimensional alloy from two- or even one-dimensional one despite significant difference in  structure and thermodynamics of these objects;
+
+-- QT is not able to take into account the dependence of interatomic interactions on such physical factors as  difference in atomic sizes of components or  their electronic structure -- factors that can ultimately cause the dependence of interaction strength on the alloy composition;
+
+
+-- QT contains only one structural element -- coordination number $z$ -- and could describe only the systems with a composition symmetric  behavior of thermodynamic functions \cite{Hillert2008,GUGGENHEIM1952};
+
+-- QT meets especially significant problems  when being applied to dense-packed lattices with frustrations \cite{jean-francoissadoc1999,TISR_p4}.
+Frustrations restrict the share of  $a - b$  links in the system. For example, in the case of the face centered cubic lattices the proportion of $a - b$ links cannot exceed 2/3 of total link's count. At the same time, standard QT  does not provide any restrictions, which may lead to a physically meaningless  overestimate of $ n_ {ab} $ when applied to systems with significant \textit{negative} deviations from ideality.
+
+
+The named limitations are completely resolved in TISR by switching to cells of increased sizes (see multiple examples below).
+
+
+The Modified Quasichemical Model (MQM) \cite{Pelton1986,Pelton2007, Pelton_p1} is a formal attempt to extent  classical QT outside of natural limits by playing around with the only structural element of theory -- coordination number $z$. 
+Formalism of MQM becomes more and more complicated by loading $z$ with multiple additional roles.
+
+Motivation for this endeavor is the desire to take in the account the Short Range Order -- the feature totally excluded when using the formal-mathematical formalism such as Redlich-Kister polynomials \cite{Redlich1949}.
+
+We must distinct two almost unrelated aspects of this attempt. 
+
+As formal mathematical schema MQM has a lot of successful applications that have to be considered as important practical achievement.
+
+ It has to be understood however that listed above internal limitations of QT not always can be resolved by a pure formal approach accepted by MQM, therefore making the physical sense of formalism questionable. 
+
+For example, the suggested above potential dependency of enthalpy on composition is resolved in MQM \cite{Pelton2007} by splitting energy of the system in two parts: one part is responsible for SRO, and other -- for the composition dependency only, without influencing SRO at all. 
+
+Such mechanical hybrid of QT and Bragg–Williams approach looks totally artificial and cannot be justified from the physical point of view.
+
+
+In the following sections we will go through some details of MQM formalism to better understand the basic details of  approximations and assumptions being made.   
+
+
+
+
+\subsection{Multiple Coordination Numbers}
+As already mentioned above, the Quasichemical Theory in its original form contains only one structural element -- coordination number $z$ -- and could describe only the systems with a composition symmetric  behavior of thermodynamic functions \cite{Hillert2008}, \cite{GUGGENHEIM1952}.
+
+
+
+
+
+
+The most important step in MQM formalism is the introduction of two distinct coordination numbers:
+
+\begin{equation} \label{cb}
+\begin{split}
+Z_A x_A = 2 n_{AA} + n_{AB}\\
+Z_B  x_B = 2 n_{BB} + n_{AB}
+\end{split}
+\end{equation}
+
+MQM authors realize \cite{Pelton_p1} that if one applies  the  substitution solution model to a solid  alloy then no two distinct coordination numbers are possible. There are however no acceptable arguments why it is possible in a liquid. 
+
+Actually this step causes  questions. 
+
+What happens if atom $A$ will be swapped with atom $B$? Will the atom $A$  in the new location have the coordination number $Z_A$? Any answer to this question is problematic.
+
+- If the answer is "yes", it will mean that the $A$ atom has been moved to a new location along with the entire surrounding.
+This will  mean also that the expression (\ref{ideal}), which serves as the normalization factor for the combinatorial factor (\ref{config_final}) and assumes the possibility of independent shuffling of atoms, must be reduced to allow shuffling of only groups of atoms.
+
+- If the answer is "no", this would mean, according (\ref{cb}), that the new position is illegal for atom $A$, indicating therefore that the permitted  positions for atoms "A" are completely different from the permitted  positions for atoms "B", which is typical for systems with multiple sublattices only. This immediately makes the normalization factor (\ref{ideal}) incorrect.
+
+
+%In addition, in many of the applications of MQM the value of $ n_{AB}$ is close to its maximal value what looks %more consistent with a multilattice environment rather than substitution alloy. 
+
+In any case the  combinatorial  factor used by \cite{Pelton_p1} could not been justified if we assume existence of multiple coordination numbers.
+
+
+Introduction of two distinct coordination numbers is necessary in MQM to describe systems where the extremums of thermodynamic functions are shifted from the equiatomic composition. It is in reality internal shortcoming of MQM rather than a physical requirement: we will see  below on multiple examples that the transfer from the atom pairs  to tetrahedron  atom groups inside the substitution solution model allows to describe asymmetrical behavior of thermodynamic functions without any artificial hypothesis.
+
+\subsection{Even more Coordination Numbers}
+
+Introduction of \textit{variable} coordination numbers inside MQM  is motivated by necessity to combine together subsystems with distinct  combinatorial  numbers. Unfortunately this generalization has a lot of negative consequences.
+
+Though multiple MQM based publications always point to (\ref{equilibrium})  as the key equation (that  had given the name to the entire theory), we must understand that this equation becomes incorrect if the coordination numbers can change with the concentration \cite{Saulov2007}.
+
+Indeed, the  equation (\ref{equilibrium}) has equal counts of quasimolecules on both sites indicating therefore that the complete count of links in the system remains fixed. We will show  now that introduction of variable coordination numbers destroys this assumption.
+
+Generalization of mass balance equations (\ref{cb}) for the case of variable coordination numbers looks as \cite{Pelton_p1} 
+
+\begin{equation}\label{Zab}
+\begin{split}
+n_A = \frac{2  n_{AA}}{Z_{AA}^A} + \frac{n_{AB}}{Z_{AB}^A}\\
+n_B = \frac{2  n_{BB}}{Z_{BB}^B} + \frac{n_{AB}}{Z_{BA}^B}\\
+\end{split}
+\end{equation}
+and allows to express the full count of links in the system as
+
+
+\begin{equation}\label{Mtotal}
+n_{AA} + n_{BB} + n_{AB} = \frac{Z_{AA}^A n_A + Z_{BB}^B n_B}{2} + \frac{n_{AB}}{2}
+(2 - k_A - k_B)
+\end{equation}
+where 
+\begin{equation}\label{k}
+k_A = \frac{Z_{AA}^A}{Z_{AB}^A}; \quad k_B = \frac{Z_{BB}^B}{Z_{BA}^B}
+\end{equation}
+
+It is evident that the right side of (\ref{Mtotal}) will be constant only when $ k_A + k_B = 2$. 
+
+Immediate consequence of introduction the variable configuration numbers is the transformation of the equation of quasichemical equilibrium  (\ref{equilibrium})   into:
+
+\begin{equation} \label{equilibrium2}
+k_A (a - a) +  k_B (b - b) \Leftrightarrow  2 (a - b)
+\end{equation} 
+
+Only when $k_A = k_B = 1$ this equation reduces to the classical form  (\ref{equilibrium}) however it is not consistent with the idea of variable configuration numbers.
+
+Immediate result of this modification of the equation of quasichemical equilibrium  is the new form of the equation that defines the mole fraction of pairs:
+
+\begin{equation}\label{eq}
+\left( \frac{n_{AB}}{ Y_A Y_B} \right)^2 / \left(    \frac {n_{AA}}{Y_A^2}  \right)^{k_A} 
+ / \left(    \frac {n_{BB}}{Y_B^2}  \right)^{k_B} = 4 \exp ( - \Delta g_{AB} / \theta)
+\end{equation}
+
+It is a transcendent equation where $Y_A$  and  $Y_B$ (dependent on $n_{AB}$) could be factored out only when  $k_A = k_B = 1$.
+
+This equation looks much mote complicated than traditional equation defining the internal equilibrium inside QT.
+
+Surprisingly, multiple MQM related publications refer  exclusively to the equation (\ref{equilibrium}) and \textit{never} to the correct equation (\ref{equilibrium2}), or to immediately following from it equation (\ref{eq}). 
+
+Even  the relatively new monograph \cite{pelton2018phase} brings no clarity to this issue.
+
+\subsection{Effective Association Solution Model}
+
+As stated in \cite{Pelton_p1}, introduction of multiple (or variable) coordination numbers converts the theory into an effective Association Solution Model (ASM) with the following set of associates:
+\begin{equation} \label{associates}
+(a - a)  \sim  A_{1/Z_{AA}^A}A_{1/Z_{AA}^A}; \quad (b - b) \sim B_{1/Z_{BB}^B}B_{1/Z_{BB}^B}; \quad (a - b) \sim
+A_{1/Z_{AB}^A} B_{1/Z_{BA}^B}
+\end{equation} 
+where  the equations (\ref{Zab}) have to be considered as the equations of mass balance. Associates are in the dynamical equilibrium described by the equation (\ref{equilibrium2}) and the mole fractions of associates  are defined by the  equation (\ref{eq}).
+
+
+This approach is important because it allows, although indirectly, to estimate the accuracy of the approximations made in MQM.
+
+As shown in \cite{TISR_p3}, difference in associate sizes is the leading source of Association Solution Model difficulties and is responsible for increased errors in the configurational entropy estimation. 
+
+Standard QT and TISR that keep coordination numbers constant are free from this problem.
+
+Introduction of multiple coordination numbers means immediately that the difference in sizes of "associates" defined by (\ref{associates})  can be very significant for the alloys where the extremums of thermodynamic functions are shifted away from the equiatomic composition.
+
+Direct comparison, performed below, shows dramatic distinction in SRO parameters calculated  using MQM and TISR, confirming the made above analysis of multiple MQM inconsistencies.
+
+
+\section{Examples of Application}
+
+This section includes several examples where MQM based approximations for thermodynamic functions reported by different authors are reinterpreted using TISR. Selection of sources was  random without any attempt to bring up  "good" cases only. 
+
+In  all figures  below the results of MQM  approximations are shown as solid lines. TISR calculations were performed in the tetrahedron approximation and the results are presented by the dotted lines. The summary of results is available  in the table below (where $\theta * {\partial W_i}/{\partial \theta}$ is abbreviated as $dW_i$  for compactness):
+
+\begin{table}[ht]
+  \begin{center}
+    \caption{TISR parameters adjusted to the MQM approximation.}
+    \label{tab:table1}
+    \begin{tabular}{|c|c|SS|SS|SS|} % <-- Changed to S here.
+	 \hline
+      System &{Figure} & ${W_1}$ & ${dW_1}$ & ${W_2}$ & ${dW_2}$ & ${W_3}$ & ${dW_3}$\\
+      \hline
+Al-Ce & fig.\ref{fig:Al-Ce} & 9.378 & -12.905 & 24.113 & -53.034 & 19.305 & -58.477\\ \hline
+Al-Mn & fig.\ref{fig:Al-Mn} & 7.212 & -8.068 & 17.858 & -29.19 & 11.002 & -14.233\\ \hline
+Al-Sc & fig.\ref{fig:Al-Sc} & 17.534 & -25.934 & 63.219 & -165.46 & 26.227 & -44.62\\ \hline
+Al-Y & fig.\ref{fig:Al-Y} & 11.524 & -20.993 & 43.011 & -150.651 & 23.308 & -57.605\\ \hline
+Ca-Zn & fig.\ref{fig:Ca-Zn} & 34.888 & -71.432 & 39.524 & -79.745 & 15.304 & -19.907\\ \hline
+Ce-Si & fig.\ref{fig:Ce-Si} & 103.668 & -353.391 & 342.362 & -1750.719 & 30.137 & -95.847\\ \hline
+Ce-Zn & fig.\ref{fig:Ce-Zn} & 22.379 & -47.129 & 17.701 & -35.039 & 8.535 & -9.154\\ \hline
+Cu-Fe & fig.\ref{fig:Cu-Fe} & 2.13 & 1.607 & 3.302 & 2.191 & 2.033 & 1.647\\ \hline
+KCl-MgCl2 & fig.\ref{fig:KCl-MgCl2} & 15.466 & -20.433 & 45.661 & -92.722 & 19.375 & -31.134\\ \hline
+Mg-Sn & fig.\ref{fig:Mg-Sn} & 12.209 & -10.005 & 52.644 & -91.5 & 26.658 & -41.214\\ \hline
+Mg-Zn & fig.\ref{fig:Mg-Zn} & 8.977 & -7.238 & 13.399 & -16.205 & 9.548 & -7.761\\ \hline
+Sn-Zn & fig.\ref{fig:Sn-Zn} & 3.139 & 2.593 & 4.364 & 1.253 & 3.668 & 1.651\\ \hline
+
+
+    \end{tabular}
+  \end{center}
+\end{table}
+
+What is evident from the presented examples, TISR is capable to reproduce with good precision  all the details of MQM calculations though the internal structures of two approximations are very distinct.
+
+As example, fig.\ref{fig:p12} shows that MQM probably overestimates the proportion of  $a-b$ links in the system. This effect was identified in all cases considered and  is quite understandable because the energy of link $a-b$ is the main energetical parameter used by MQM. 
+
+TISR is much more flexible in this respect: expression for the energy includes contributions from the cells of different composition, not from the equiatomic atom groups only.
+
+Other surprising  detail is the fact that in all the cases considered, the MQM uses very low value for the coordination numbers equal 6 or even lower. This value is motivated \cite{Pelton_p1} by multiple adjustment experiments and  by the (pure technical) requirement to have the same coordination number in all subsystems of multicomponent system but cannot be confirmed by other sources \cite{brucepoling2000}.
+
+This effect can have quite unexpected explanations thanks to generalizations of combinatorial factor proposed in \cite{TISR_p4}. TISR introduces two structural parameters $\beta$ and $\gamma$ that are identical in case of standard QT approximation where both are equal to the  combinatorial  factor $z$. At the same time the Improved Combinatorial Factor introduced in \cite{TISR_p4} estimates  values of $\gamma$  to be close to 6 for the most important $3d$ lattices.
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Ce-Si_TISR_p12}
+  \caption{System Ce-Si}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Mg-Sn_TISR_p12}
+  \caption{System Mg-Sn}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{Proportion of a-b links: solid lines -- MQM; dotted lines - TISR}
+\label{fig:p12}
+\end{figure}
+
+
+
+
+
+\section{Conclusions}
+
+Equations of the Quasichemical Theory are deduced directly from the equations of the Theory of Inhomogeneous Short Range Order. The new method clarifies several gray spots in the QT background demonstrating significant methodological advantages of TISR. 
+
+It is important because heuristic methods used by TISR can be directly applied (in contrast to QT) to the atom groups of any size and it can be expected that the precision of the resulting methods will be at least as good as the precision of QT.
+
+Classical QT has a very narrow area of applicability and two theories -- MQM and TISR -- may be considered as possible generalization of QT. Multiple examples inside this article show that both theories are successful in describing systems with significant nonideality but approaches used are quite distinct.
+
+The basic idea of TISR is that nontrivial behavior of interatomic interaction and the arising as a result  variations in the Short Range  Order  can be described only by considering the atom groups large enough to be accountable for the effects considered. 
+The atom groups (cells) introduced by TISR are in this respect nothing but an advanced form of description the Short Range  Order  phenomenon.
+
+All examples of TISR application in this article use tetrahedron as the basic cell (though such choice isn't mandatory). 
+
+
+
+MQM uses different approach. It takes the equations from the classical QT and converts the few parameters determining the theory  into adjustable composition dependent functions. Resulting method is successfully applied to a wide range of systems however the physical meaning of introduced modifications is doubtful. 
+As a result, the accuracy of the SRO assessment (which has been declared as one of the key MQM objectives) is in many cases questionable.
+
+ The above chapters have to be addressed for multiple details.
+
+In general, TISR shows significant advantages in clarity, flexibility, and simplicity when reproducing and extending the results of Quasichemical Theory.
+
+\newpage
+\bibliographystyle{unsrtnat}
+\bibliography{E:/GIT/TISR/references}
+
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Al-Ce_Activity}
+  \caption{Component Activities}
+  \label{fig:Ag-In1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Al-Ce_Enthalpy}
+  \caption{Enthalpy of Mixing (kJ/mol)}
+  \label{fig:Ag-In2}
+\end{subfigure}
+\caption{System Al-Ce (T = 1873 K): solid lines -- \cite{Al-Sc_Data}; dotted lines - TISR}
+\label{fig:Al-Ce}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Al-Mn_Activity}
+  \caption{Component Activities}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Al-Mn_Enthalpy}
+  \caption{Enthalpy of Mixing (kJ/mol)}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{System Al-Mn (T = 1520 K): solid lines -- \cite{Al-Mn_Data}; dotted lines - TISR}
+\label{fig:Al-Mn}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Al-Sc_Activity}
+  \caption{Component Activities}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Al-Sc_Enthalpy}
+  \caption{Enthalpy of Mixing (kJ/mol)}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{System Al-Sc (T = 1873 K): solid lines -- \cite{Al-Sc_Data}; dotted lines - TISR}
+\label{fig:Al-Sc}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Al-Y_Activity}
+  \caption{Component Activities}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Al-Y_Enthalpy}
+  \caption{Enthalpy of Mixing (kJ/mol)}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{System Al-Y (T = 1873 K): solid lines -- \cite{Al-Sc_Data}; dotted lines - TISR}
+\label{fig:Al-Y}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Ca-Zn_Activity}
+  \caption{Component Activities}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Ca-Zn_Enthalpy}
+  \caption{Enthalpy of Mixing (kJ/mol)}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{System Ca-Zn (T = 1520 K): solid lines -- \cite{Ca-Zn_Data}; dotted lines - TISR}
+\label{fig:Ca-Zn}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Ce-Si_Activity}
+  \caption{Component Activities}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Ce-Si_Enthalpy}
+  \caption{Enthalpy of Mixing (kJ/mol)}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{System Ce-Si (T = 1923 K): solid lines -- \cite{Ce-Si_Data}; dotted lines - TISR}
+\label{fig:Ce-Si}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Ce-Zn_Activity}
+  \caption{Component Activities}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Ce-Zn_Enthalpy}
+  \caption{Enthalpy of Mixing (kJ/mol)}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{System Ce-Zn (T = 1873 K): solid lines -- \cite{Ce-Zn_Data}; dotted lines - TISR}
+\label{fig:Ce-Zn}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Cu-Fe_Activity}
+  \caption{Component Activities}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Cu-Fe_Enthalpy}
+  \caption{Enthalpy of Mixing (kJ/mol)}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{System Cu-Fe (T = 1873 K): solid lines -- \cite{Cu-Fe_Data}; dotted lines - TISR}
+\label{fig:Cu-Fe}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{KCl-MgCl2_Activity}
+  \caption{Component Activities}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{KCl-MgCl2_Enthalpy}
+  \caption{Enthalpy of Mixing (kJ/mol)}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{System KCl-MgCl2 (T = 1073 K): solid lines -- \cite{Pelton_p1}; dotted lines - TISR}
+\label{fig:KCl-MgCl2}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Mg-Sn_Activity}
+  \caption{Component Activities}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Mg-Sn_Enthalpy}
+  \caption{Enthalpy of Mixing (kJ/mol)}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{System Mg-Sn (T = 1100 K): solid lines -- \cite{Ghosh2012}; dotted lines - TISR}
+\label{fig:Mg-Sn}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Mg-Zn_Activity}
+  \caption{Component Activities}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Mg-Zn_Enthalpy}
+  \caption{Enthalpy of Mixing (kJ/mol)}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{System Mg-Zn (T = 923 K): solid lines -- \cite{Ghosh2012}; dotted lines - TISR}
+\label{fig:Mg-Zn}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Sn-Zn_Activity}
+  \caption{Component Activities}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Sn-Zn_Enthalpy}
+  \caption{Enthalpy of Mixing (kJ/mol)}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{System Sn-Zn (T = 873 K): solid lines -- \cite{Ghosh2012}; dotted lines - TISR}
+\label{fig:Sn-Zn}
+\end{figure}
+
+\end{document}
+
+This presentation causes at least two questions.
+
+
+The introduction of various coordination numbers leads in (\ref{associates}) to a significant difference in the sizes of hypothetical associates.
+
+
+
+It is demonstrated in multiple publications  related to MQM  \cite{Pelton2007,pelton2018phase} that ASM is not capable to describe systems with the positive deviations from ideality. Based on this,  ASM is called a  "physically unrealistic" theory.
+
+Question is now, how is it possible that the effective Association Solution Model used inside of MQM is free from this defect and successfully describes systems with positive  deviations from ideality?
+
+
+
+Any ASM can be "fixed" to have the right high temperature limit  (\ref{ideal})   (as it was done by the expression (\ref{QCF}) inside QT) but we cannot pretend anymore  that equations can reproduce all three first coefficients of the high temperature expansion, as QT does.
+
+
+\subsection{Additional Energetical Parameters}
+
+QT in its original form has only one significant energetical parameter -- interchange energy \cite{Pfeiler2007}. It is evidently not enough if high applicability is required. MQM introduces direct interaction of pairs as real quasimolecules. Motivation of this is attempt to take in account the interaction 
+
+Though authors  emphasize consistently \cite{Pelton1986,Pelton2007, Pelton_p1} that MQM "not seeking a detailed description of the molecular structure of the solutions, but
+rather a set of equations which takes ordering into account
+in a general way and for which only a small set of coefficients is needed" we would like to analyze it just from the principal point of view as pretending to describe the Short Order phenomenon in the liquid alloys. Today TISR presents alternative and  flexible method of taking the Short Order in account providing reasonable basis for comparison.
+
+Local fluctuations can of course exist where the atoms $a$ prefer to be surrounded by the atoms $b$ but it not requires different coordination numbers. Different coordination numbers  suggest two-sublattices like structure, at least local.
+
+Problem is now, that two-sublattices systems have  combinatorial factor that is critically distinct from the one used by the Quasichemical Theory, as finally accepted in the third article of series
+\cite{ Pelton_p1}. 
+
+In multi-sublattices environment the links (or cells) allowed to be rearranged only inside the same sublattice so the calculated value (\ref{gugg}) 
+looks inflated. It is difficult to predict how this numeric inaccuracy can influence physically meaningful conclusions so we should like to consider a specific example.
+
+A good example for analysis is the Mg-Sn system that exhibits pronounced negative deviations from the ideality with a remarkable asymmetric behavior.
